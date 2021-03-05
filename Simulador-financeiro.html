@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:rgb(221, 255, 255);">
+  <div style="text-align: center;"><img style="width: 500px;" src="relaxmachine.png" alt=""></div>
+     <br><br><h1>Simule seu investimento com a <span style="color: cyan;">FERBGAM</span></h1>
+    <h2>Nossos pacotes</h2>
+    <font size="5"><span style="color: deepskyblue;">Master Pack:Sistema para controle de Temperatura, Luminosidade e Umidade;</span>
+        <br><br><span style="color: cyan;">Medium Pack :Sistema de controle de Temperatura e Luminosidade;</span>
+        <br><br><span style="color: lightblue;">Basic Pack:Sistema para controle somente de Temperatura.</span></font>
+       
+        <br><br><font size="5">Qual o nome da empresa?
+        <input id="empresa" type="text" placeholder="Nome da empresa..."></font>
+      
+        <br> <br><font size="5">Quantos metros quadrado pretende instalar os Sistemas
+            <input type="text" id="metros2" placeholder="Quantos m²..."></font>
+             
+        <br><br> <font size="5">Quantas salas/escritorio pretende instalar nossos sistemas</font>
+             <input id="qtd_salas" placeholder="Salas/Escritorio" type="text">
+            
+        <br><br><br><font size="4">Gostaria de qual dos nossos Packs para solicitar um orçamento?</font>
+             <br> <br><button onclick="master_pack()"><span style="color: deepskyblue;">MasterPack</span></button> 
+            
+         <button onclick="medium_pack()"><span style="color: cyan;">MediumPack</span></button>
+         <button onclick="basic_pack()"><span style="color:lightblue;">BasicPack</span></button>
+        <div id="orçamento"><h3>Orçamento</h3></div>
+    </body>
+</html>
+<script>
+    function master_pack() {
+        var master_preco = metros2.value * 500;
+        orçamento.innerHTML += `<h3>O orçamento para ${empresa.value} implantar a Relax Machine trazendo uma alta 
+           na efeciencia a sua equipe<br>irá custar somente R$${metros2.value * 500} por ${qtd_salas.value} Salas/Escritório, o "MasterPack" contem garantia estendida de 
+         3 anos e 1 ano de manutenção gratis<h3>`
+    }
+    function medium_pack() {
+        orçamento.innerHTML += `<h3>O orçamento para ${empresa.value} implantar a Relax Machine trazendo uma alta
+           na efeciencia a sua equipe de funcionarios <br>irá custar somente R$${metros2.value * 400} por ${qtd_salas.value} Salas/Escritório, o "MediumPack" contem garantia estendida de 
+         2 anos e 6 meses de manutenção gratis<h3>`
+    }
+    function basic_pack() {
+        orçamento.innerHTML += `<h3>O orçamento para ${empresa.value} implantar a Relax Machine trazendo uma alta
+           na efeciencia a sua equipe de funcionarios <br>irá custar somente R$${metros2.value * 289} por ${qtd_salas.value} Salas/Escritório, o "MediumPack" contem garantia estendida de 
+         1 ano e 3 meses de manutenção gratis<h3>`
+    }
+</script>
