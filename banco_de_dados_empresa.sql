@@ -85,6 +85,10 @@ update salas set Empresa='BANDTEC' where idSala=4 ;
 update salas set Empresa='CODEBY' where idSala=5 ;
 update salas set Empresa='ACCENTURE' where idSala=6 ;
 
+alter table sensorlumi add LuminosidadeR varchar(40);
+update sensorlumi set luminosidadeR='200' where idsensor=3;
+update sensorlumi set luminosidadeR='200' where idsensor=2;
+
 select * from empresas;
 select * from sensorTemp;
 select * from Salas;
