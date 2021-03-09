@@ -77,6 +77,14 @@ insert into sensorumi values
 (null,'50-70','60','SAFRA',3),
 (null,'50-70','60','BANDTEC',4)
  ;
+ alter table salas add Empresa varchar(40);
+update salas set Empresa='PREPTA' where idSala=1 ;
+update salas set Empresa='VALEMOBI' where idSala=2 ;
+update salas set Empresa='SAFRA' where idSala=3 ;
+update salas set Empresa='BANDTEC' where idSala=4 ;
+update salas set Empresa='CODEBY' where idSala=5 ;
+update salas set Empresa='ACCENTURE' where idSala=6 ;
+
 select * from empresas;
 select * from sensorTemp;
 select * from Salas;
