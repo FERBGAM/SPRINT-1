@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador</title>
+<link rel="stylesheet" href="Simulador.css">
+</head>
+
+<body">
+    <div class="header">
+        <img
+        src="https://cdn.discordapp.com/attachments/808838424597233665/817203600946102302/relaxmachine.png">
+        <section>
+        <br><br>
+        <section class="head"> Simule seu investimento com a <span class="ferbgam">FERBGAM</span></section>
+        <section class="under_head"> Nossos pacotes</section>
+
+        <span class="span_id1">Premium Pack:Sistema para controle de Temperatura, Luminosidade e
+                Umidade;</span>
+            <br><br><span class="span_id2">Medium Pack :Sistema de controle de Temperatura e
+                Umidade;</span>
+            <br><br><span class="span_id3">Basic Pack:Sistema para controle somente de
+                Temperatura.</span>
+        
+
+
+        <br>
+       <section class="inputs_class">
+        Qual o nome da empresa?
+            <!--Coleta de dado do tipo texto do nome da empresa border radius arredondar borda, height tamanho, 
+                outline remover linha ao redor do botao placeholder exibir texto dentro da caixa-->
+            <input style="border-radius: 20px 20%;height: 20px;outline: 0;" id="empresa" type="text" placeholder="&nbsp;&nbsp;&nbsp;Nome da empresa...">
+        
+
+        <br>
+        
+        Quantos metros quadrado pretende instalar os Sistemas
+            <!--Coleta de dado do tipo texto do nome da empresa border radius arredondar borda, height tamanho, 
+                outline remover linha ao redor do botao placeholder exibir texto dentro da caixa-->
+            <input style="border-radius: 20px 20%;height: 20px;outline: 0;" type="text" id="metros2" placeholder="&nbsp;&nbsp;&nbsp;Quantos m³...">
+        
+
+        <br>
+        
+       Quantas salas/escritorio pretende instalar nossos sistemas
+            <!--Coleta de dado do tipo texto do nome da empresa border radius arredondar borda, height tamanho, 
+                outline remover linha ao redor do botao placeholder exibir texto dentro da caixa-->
+            <input style="border-radius: 20px 20%;height: 20px;outline: 0;" id="qtd_salas" placeholder="&nbsp;&nbsp;&nbsp;Salas/Escritorio" type="text">
+        
+        </section>
+
+        <br>
+        <h3>Gostaria de qual dos nossos Packs para solicitar um orçamento?</h3>
+        <!--Botões ao clicar (onclick) chamam determinada função javascript -->
+        <br> <br><button onclick="master_pack()">Premium Pack</span></button>
+        <button onclick="medium_pack()">Medium Pack</span></button>
+        <button onclick="basic_pack()">Basic Pack</span></button>
+        <h2 id="orcamento_display">Orçamento</h2>
+        <div id="orcamento">
+
+            </div>
+    </div>
+    </section>
+</body>
+
+</html>
+<script>
+    //Função ao clicar no botão master pack o que será exibido
+    function master_pack() {
+        // exibir textos incluindo nome da empresa utilizando innerHTML, conta realizada com o valor do input metros2 vezes 500 e quantidade de salas
+        orcamento.innerHTML = `O orçamento para ${empresa.value} implantar a Relax Machine trazendo uma alta
+           na eficiência a sua equipe de funcionarios irá custar somente R$${metros2.value * 500},00 por ${qtd_salas.value} Salas/Escritório, o "Premium Pack" contem garantia estendida de 
+         1 ano`;
+         orcamento_display.style.display='block';
+        
+    }
+    //Função ao clicar no botão medium pack o que será exibido
+    function medium_pack() {
+        // exibir textos incluindo nome da empresa, conta realizada com o valor do input metros2 vezes 400 e quantidade de salas
+        orcamento.innerHTML = `O orçamento para ${empresa.value} implantar a Relax Machine trazendo uma alta
+           na eficiência a sua equipe de funcionarios irá custar somente R$${metros2.value * 400},00 por ${qtd_salas.value} Salas/Escritório, o "Medium Pack" contem garantia estendida de 
+         2 anos`;
+         orcamento_display.style.display='block';
+        
+    }
+    //Função ao clicar no botão basic pack o que será exibido
+    function basic_pack() {
+        // exibir textos incluindo nome da empresa, conta realizada com o valor do input metros2 vezes 289 e quantidade de salas
+        orcamento.innerHTML = `O orçamento para ${empresa.value} implantar a Relax Machine trazendo uma alta
+           na eficiência a sua equipe de funcionarios irá custar somente R$${metros2.value * 300},00 por ${qtd_salas.value} Salas/Escritório, o "Basic Pack" contem garantia estendida de 
+         1 ano`;
+         orcamento_display.style.display='block';
+
+
+
+    }
+</script>
