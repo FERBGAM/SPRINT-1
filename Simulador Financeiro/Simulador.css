@@ -3,11 +3,6 @@ body{
     text-align: center;
 
 }
-.header {
-    border-color: blue;
-border-style: dotted;
-border-radius: 50px;
-}
 img {
     width: 350px;
 }
