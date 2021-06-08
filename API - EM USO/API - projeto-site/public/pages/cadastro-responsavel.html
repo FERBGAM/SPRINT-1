@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Cadastro</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../src/css/dashboard.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../src/css/login.css'>
+    <link rel="icon" href="../src/img/Logotipos/fer1branco.png">
+    <!--Link biblioteca de icones online-->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="body-pg">
+    <div class="l-navbar" id="navbar">
+        <nav class="nav">
+            <div>
+                <a href="#" class="nav_logo">
+                </a>
+                <div class="nav_list">
+
+                    <a href="#" class="nav_link">
+                        <i class='bx bx-user nav_icon'></i>
+                        <span class="nav_name">Users</span>
+                    </a>
+
+                    <a href="dashboard.html" class="nav_link">
+                        <i class='bx bx-grid-alt nav_icon'></i>
+                        <span class="nav_name">Dashboard</span>
+                    </a>
+
+                    <a href="#" class="nav_link">
+                        <i class='far fa-bell nav_icon'></i>
+                        <span class="nav_name">Messages</span>
+                    </a>
+
+                    <a href="#" class="nav_link selected">
+                        <i class='bx bx-user-plus nav_icon'></i>
+                        <span class="nav_name">Add user</span>
+                    </a>
+                </div>
+            </div>
+            <a href="#" class="nav_link">
+                <i class='bx bx-log-out nav_icon'></i>
+                <span class="nav_name">Log Out</span>
+            </a>
+        </nav>
+    </div>
+    <div class="main">
+        <div class="page-cadastro">
+            <div class="general-title">
+                <h1>Cadastro</h1>
+                <hr class="pink-stroke" />
+            </div>
+            <div class="container-form">
+                <form onsubmit="cadastroResponsavel()" action="javascript:void(0)" id="form_cadastroResponsavel"
+                    class="form-" autocomplete="off">
+                    <div class="sign-resp-container">
+
+
+                        <div class="sign-resp-first-column">
+                            <div class="input-field">
+                                <i class="fas fa-user"></i>
+                                <input id="nomeResponsavel" type="text" name="nomeResponsavel" placeholder="Nome" required>
+                            </div>
+                            <div class="input-field">
+                                <i class="fas fa-user"></i>
+                                <input id="loginResponsavel" type="text" name="loginResponsavel" placeholder="Usuário"
+                                    required>
+                            </div>
+                            <div class="input-field">
+                                <i class="fas fa-user"></i>
+                                <input id="celularResponsavel" type="tel" name="celularResponsavel"
+                                    placeholder="Telefone Celular" required>
+                            </div>
+                        </div>
+
+
+                        <div class="sign-resp-second-column">
+                            <div class="input-field">
+                                <i class="fas fa-envelope"></i>
+                                <input id="emailResponsavel" type="text" name="emailResponsavel" placeholder="E-mail" required>
+                            </div>
+                            <div class="input-field">
+                                <i class="fas fa-lock"></i>
+                                <input id="cadastroPassword" onkeyup="checkPassword()" name="cadastroPassword" type="password"
+                                    placeholder="Senha" required>
+                            </div>
+                            <div class="input-field">
+                                <i class="fas fa-lock"></i>
+                                <input id="confirmacaoPassword" onkeyup="checkPassword()" type="password"
+                                    placeholder="Confirme sua senha" required>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="check-container">
+
+
+                        <div class="check-option">
+                            <p>As senhas devem ser iguais</p>
+                            <i id="equal-pass" class="far fa-check-circle"></i>
+                        </div>
+                        <p class="social-text"> A senha deve conter:</p>
+                        <div class="check-option">
+                            <p>Mais de 3 caracteres</p>
+                            <i id="minChar" class="far fa-check-circle"></i>
+                        </div>
+                        <div class="check-option">
+                            <p>Pelo menos uma letra maiúscula</p>
+                            <i id="upperCase" class="far fa-check-circle"></i>
+                        </div>
+                        <div class="check-option">
+                            <p>Pelo menos um número</p>
+                            <i id="numericChar" class="far fa-check-circle"></i>
+                        </div>
+
+
+                    </div>
+                    <input type="submit" value="Cadastrar" class="btn solid ">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../src/js/cadastroResponsavel.js"></script>
+    <script src="../src/js/alerts.js"></script>
+</body>
+
+</html>
