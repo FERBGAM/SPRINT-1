@@ -1,9 +1,11 @@
 {
-  "name": "pi-ads-2020-2",
+  "name": "ferbgam",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+"postinstall": "npm install"
+
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -19,3 +21,4 @@
     "tedious": "^6.6.0"
   }
 }
+
