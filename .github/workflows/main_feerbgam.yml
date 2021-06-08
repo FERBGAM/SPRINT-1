@@ -52,5 +52,5 @@ jobs:
       with:
         app-name: 'feerbgam'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_8ef67e9d679d4f7fa823344ce8141d7f }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_f4429c3f81894d7ba2c46af21cb53a55 }}
         package: .
