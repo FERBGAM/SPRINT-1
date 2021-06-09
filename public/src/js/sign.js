@@ -20,7 +20,7 @@ cadastrar = () => {
         fetch("/empresas/cadastrarEmpresa", {
             method: "POST",
             body: signData
-        }).then(function (response) {
+        }).then(function(response) {
 
             if (response.ok) {
                 console.log(response);
@@ -32,7 +32,7 @@ cadastrar = () => {
 
             } else {
                 console.log('Erro de cadastro!');
-                response.text().then(function (error_desc) {
+                response.text().then(function(error_desc) {
                     console.log(error_desc);
 
                     generateAlert(document.getElementById('container'),
@@ -147,8 +147,7 @@ function validationStepOne() {
             nomeEmpresa.placeholder = 'Empresa';
         }, 1500);
         return false;
-    }
-    else if (!cnpj.value.match(/[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2}/g)) {
+    } else if (!cnpj.value.match(/[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2}/g)) {
         cnpj.parentElement.classList.toggle('wrong-input');
         cnpj.value = '';
         cnpj.placeholder = 'Digite um CNPJ válido';
@@ -159,8 +158,7 @@ function validationStepOne() {
             cnpj.placeholder = 'CNPJ';
         }, 1500);
         return false;
-    }
-    else if (telefoneEmpresa.value == '' || telefoneEmpresa.length > 11 || telefoneEmpresa.length < 10) {
+    } else if (telefoneEmpresa.value == '' || telefoneEmpresa.length > 11 || telefoneEmpresa.length < 10) {
         telefoneEmpresa.parentElement.classList.toggle('wrong-input');
         telefoneEmpresa.value = '';
         telefoneEmpresa.placeholder = 'Digite um telefone válido';
@@ -172,8 +170,7 @@ function validationStepOne() {
 
         }, 1500);
         return false;
-    }
-    else if (!emailEmpresa.value.match(/^[^\s@]+@[^\s@]+$/) || emailEmpresa.value == '') {
+    } else if (!emailEmpresa.value.match(/^[^\s@]+@[^\s@]+$/) || emailEmpresa.value == '') {
         emailEmpresa.parentElement.classList.toggle('wrong-input');
         emailEmpresa.value = '';
         emailEmpresa.placeholder = 'Digite um e-mail válido';
@@ -184,8 +181,7 @@ function validationStepOne() {
             emailEmpresa.placeholder = 'Digite um email válido';
         }, 1500);
         return false;
-    }
-    else {
+    } else {
         return true;
     }
 }
@@ -204,8 +200,7 @@ function validationStepTwo() {
             cep.placeholder = 'CEP';
         }, 1500);
         return false;
-    }
-    else if (logradouro.value == '' || logradouro == undefined) {
+    } else if (logradouro.value == '' || logradouro == undefined) {
         logradouro.parentElement.classList.toggle('wrong-input');
         logradouro.value = '';
         logradouro.placeholder = 'Digite um logradouro válido';
@@ -216,8 +211,7 @@ function validationStepTwo() {
             logradouro.placeholder = 'Logradouro';
         }, 1500);
         return false;
-    }
-    else if (uf.value == '' || uf == undefined || uf.value.length != 2) {
+    } else if (uf.value == '' || uf == undefined || uf.value.length != 2) {
         uf.parentElement.classList.toggle('wrong-input');
 
         setTimeout(() => {
@@ -225,8 +219,7 @@ function validationStepTwo() {
             uf.style.color = '#FFF';
         }, 1500);
         return false;
-    }
-    else if (cidade.value == '' || cidade == undefined) {
+    } else if (cidade.value == '' || cidade == undefined) {
         cidade.parentElement.classList.toggle('wrong-input');
         cidade.value = '';
         cidade.placeholder = 'Digite uma cidade válida';
@@ -238,8 +231,7 @@ function validationStepTwo() {
 
         }, 1500);
         return false;
-    }
-    else if (bairro.value == '' || bairro == undefined) {
+    } else if (bairro.value == '' || bairro == undefined) {
         bairro.parentElement.classList.toggle('wrong-input');
         bairro.value = '';
         bairro.placeholder = 'Digite um bairro válido';
@@ -251,8 +243,7 @@ function validationStepTwo() {
 
         }, 1500);
         return false;
-    }
-    else if (numero.value == '' || isNaN(numero.value)) {
+    } else if (numero.value == '' || isNaN(numero.value)) {
         numero.parentElement.classList.toggle('wrong-input');
         numero.value = '';
         numero.placeholder = 'Digite um numero válido';
@@ -263,8 +254,7 @@ function validationStepTwo() {
             numero.placeholder = 'Número';
         }, 1500);
         return false;
-    }
-    else {
+    } else {
         return true;
     }
 }
@@ -283,8 +273,7 @@ function validationStepThree() {
 
         }, 1500);
         return false;
-    }
-    else if (!(hasMin && hasNumber && hasUpper && isEqual)) {
+    } else if (!(hasMin && hasNumber && hasUpper && isEqual)) {
 
         passwordInput.parentElement.classList.add('wrong-input');
         passToValidateInput.parentElement.classList.add('wrong-input');
@@ -295,8 +284,7 @@ function validationStepThree() {
 
         }, 1500);
         return false
-    }
-    else {
+    } else {
         return true;
     }
 }
@@ -426,11 +414,11 @@ function clearCadastro() {
 
 
 // console.log(container)
-sign_up_btn.addEventListener('click', function () {
+sign_up_btn.addEventListener('click', function() {
     container.classList.add('sign-up-mode')
 });
 
-sign_in_btn.addEventListener('click', function () {
+sign_in_btn.addEventListener('click', function() {
     container.classList.remove('sign-up-mode');
 });
 
@@ -443,3 +431,45 @@ function closeAlert(element) {
 }
 
 
+
+pesquisar = () => {
+    console.log('iniciando a consulta...');
+
+    let viacep = cepEmpresa.value.toString();
+
+    let cepvia = 'https://viacep.com.br/ws/' + viacep + '/json/';
+
+    if (!cep.value.match(/^[0-9]*$/)) {
+        cep.parentElement.classList.toggle('wrong-input');
+        cep.value = '';
+        cep.placeholder = 'Digite um cep válido';
+
+        setTimeout(() => {
+            cep.parentElement.classList.remove('wrong-input');
+            cep.style.color = '#FFF';
+            cep.placeholder = 'CEP';
+        }, 1500);
+
+    } else if (viacep.length == 8) {
+
+        fetch(`${cepvia}`)
+
+        .then(resposta => {
+            resposta.json()
+                .then(json => {
+
+                    if (json.erro == undefined || json.erro == null) {
+
+                        console.log(json)
+
+                        logradouroEmpresa.value = json.logradouro;
+                        selectUF.value = json.uf;
+                        cidadeEmpresa.value = json.localidade;
+                        bairroEmpresa.value = json.bairro;
+
+                    }
+
+                });
+        })
+    }
+}

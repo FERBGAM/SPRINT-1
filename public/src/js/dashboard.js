@@ -155,11 +155,11 @@ listSensors = (data) => {
 
 let salasObject;
 
-listarSalas = async () => {
+listarSalas = () => {
 
     let containerSalas = document.querySelector('.rooms-container');
 
-    await fetch(`/salas/${user.idEmpresa != undefined ? user.idEmpresa : user.fkEmpresa}`, {
+    fetch(`/salas/${user.idEmpresa != undefined ? user.idEmpresa : user.fkEmpresa}`, {
         method: 'GET'
     }).then((response) => {
         response.json().then(data => {

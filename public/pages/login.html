@@ -35,8 +35,7 @@
         <div class="forms-container">
             <div class="signin-signup">
                 <!--Formulário de Login-->
-                <form id="form_login" autocomplete="off" class="sign-in-form" onsubmit="login()"
-                    action="javascript:void(0)">
+                <form id="form_login" autocomplete="off" class="sign-in-form" onsubmit="login()" action="javascript:void(0)">
                     <h2 class="title">Bem-vindo</h2>
                     <!-- RADION BUTTONS -->
                     <div class="input-radio">
@@ -75,8 +74,7 @@
                 </form>
 
                 <!--Formulário de Cadastro-->
-                <form id="form_cadastro" class="sign-up-form" autocomplete="off" onsubmit="cadastrar()"
-                    action="javascript:void(0)">
+                <form id="form_cadastro" class="sign-up-form" autocomplete="off" onsubmit="cadastrar()" action="javascript:void(0)">
 
                     <div class="step-row">
                         <div id="progress" class="progress"></div>
@@ -94,7 +92,7 @@
                             </div>
                             <div class="input-field">
                                 <i class="fas fa-id-card"></i>
-                                <input id="cnpjEmpresa" type="text" name="cnpjEmpresa" placeholder="CNPJ">
+                                <input id="cnpjEmpresa" type="text" name="cnpjEmpresa" placeholder="CNPJ" maxlength="14">
                             </div>
                             <div class="input-field">
                                 <i class="fas fa-phone-alt"></i>
@@ -111,44 +109,43 @@
                             <!--cep,logradouro,uf,cidade,numero,complemento,bairro-->
                             <div class="input-field">
                                 <i class="fas fa-globe-americas"></i>
-                                <input id="cepEmpresa" type="number" name="cepEmpresa" placeholder="CEP" min="0">
+                                <input onkeyup="pesquisar()" id="cepEmpresa" type="text" name="cepEmpresa" placeholder="CEP" min="0" maxlength="8">
                             </div>
                             <div class="input-field">
                                 <i class="fas fa-road"></i>
-                                <input id="logradouroEmpresa" type="text" name="logradouroEmpresa"
-                                    placeholder="Logradouro">
+                                <input id="logradouroEmpresa" type="text" name="logradouroEmpresa" placeholder="Logradouro">
                             </div>
                             <div class="input-field">
                                 <i class="fas fa-globe"></i>
                                 <select id="selectUF" name="ufEmpresa" placeholder="UF">
                                     <option disabled selected>Selectione um UF</option>
-                                    <option>AC</option>
-                                    <option>AL</option>
-                                    <option>AM</option>
-                                    <option>AP</option>
-                                    <option>BA</option>
-                                    <option>CE</option>
-                                    <option>DF</option>
-                                    <option>ES</option>
-                                    <option>GO</option>
-                                    <option>MA</option>
-                                    <option>MT</option>
-                                    <option>MS</option>
-                                    <option>MG</option>
-                                    <option>PA</option>
-                                    <option>PB</option>
-                                    <option>PR</option>
-                                    <option>PE</option>
-                                    <option>PI</option>
-                                    <option>RJ</option>
-                                    <option>RN</option>
-                                    <option>RS</option>
-                                    <option>RO</option>
-                                    <option>RR</option>
-                                    <option>SC</option>
-                                    <option>SP</option>
-                                    <option>SE</option>
-                                    <option>TO</option>
+                                    <option value="AC">AC</option>
+                                    <option value="AL">AL</option>
+                                    <option value="AM">AM</option>
+                                    <option value="AP">AP</option>
+                                    <option value="BA">BA</option>
+                                    <option value="CE">CE</option>
+                                    <option value="DF">DF</option>
+                                    <option value="ES">ES</option>
+                                    <option value="GO">GO</option>
+                                    <option value="MA">MA</option>
+                                    <option value="MT">MT</option>
+                                    <option value="MS">MS</option>
+                                    <option value="MG">MG</option>
+                                    <option value="PA">PA</option>
+                                    <option value="PB">PB</option>
+                                    <option value="PR">PR</option>
+                                    <option value="PE">PE</option>
+                                    <option value="PI">PI</option>
+                                    <option value="RJ">RJ</option>
+                                    <option value="RN">RN</option>
+                                    <option value="RS">RS</option>
+                                    <option value="RO">RO</option>
+                                    <option value="RR">RR</option>
+                                    <option value="SC">SC</option>
+                                    <option value="SP">SP</option>
+                                    <option value="SE">SE</option>
+                                    <option value="TO">TO</option>
                                 </select>
                             </div>
 
@@ -168,8 +165,7 @@
                             </div>
                             <div class="input-field">
                                 <i class="fas fa-plus"></i>
-                                <input id="complementoEmpresa" type="text" name="complementoEmpresa"
-                                    placeholder="Complemento">
+                                <input id="complementoEmpresa" type="text" name="complementoEmpresa" placeholder="Complemento">
                             </div>
 
 
@@ -183,13 +179,11 @@
                             </div>
                             <div class="input-field">
                                 <i class="fas fa-lock"></i>
-                                <input id="cadastroPassword" onkeyup="checkPassword()" name="senhaEmpresa"
-                                    type="password" placeholder="Senha">
+                                <input id="cadastroPassword" onkeyup="checkPassword()" name="senhaEmpresa" type="password" placeholder="Senha">
                             </div>
                             <div class="input-field">
                                 <i class="fas fa-lock"></i>
-                                <input id="confirmacaoPassword" onkeyup="checkPassword()" type="password"
-                                    placeholder="Confirme sua senha">
+                                <input id="confirmacaoPassword" onkeyup="checkPassword()" type="password" placeholder="Confirme sua senha">
                             </div>
 
 
